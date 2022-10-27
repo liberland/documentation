@@ -35,7 +35,18 @@ The requirements for being a citizen is:
 Get some LLM:
 Navigate over to `polkadot.js > Developer > extrinsics > llm > fakesend `
 
+Allocate LLM for politics:
+`polkadot.js > Developer > extrinsics > llm > politicslock `
 
+Check your LLM balance by going to `Developer > chainstate > llm > select llmPolitics and llm.llmBalance `
 
+## LLMPolitics
+This is the amount of LLM you have allocated for Politics, these llm can not be used for any type of non-voting functionality
+
+## LLMBalance  
+This is your liquid LLM balance  
+
+Unpool your llm with :
+`polkadot.js > Developer > extrinsics > llm > politicsunlock `
 
 
