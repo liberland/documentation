@@ -64,8 +64,9 @@ maxFee: 500
 Note: if your testing this in a local --dev enviroment, you need to use the sudo ac(Alice) to set a registra:
 Sudo > identity > addRegistrar  
 
-Now you need to either wait for someone to give you a judgement of Knowngood or do it yourself:
-![Judgement](Judgement.png "Provide judgement")
+Now you need to either wait for someone to give you a judgement of Knowngood or do it yourself:    
+
+![Judgement](judgement.png "Provide judgement")
 
 
 
