@@ -1,6 +1,8 @@
 # Documentation
 Documentation for Liberland's Blockchain
 
+All documentation can be find in the *docs/* folder
+
 
 ### Add documetation by submiting a pull request to this repository
 
