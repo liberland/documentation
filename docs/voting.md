@@ -69,4 +69,11 @@ Now you need to either wait for someone to give you a judgement of Knowngood or 
 ![Judgement](judgement.png "Provide judgement")
 
 
+Now when you have become an on-chain citizen you can interact with the politics system with your pooled llm.
+When you vote your pooled LLM will become locked until the vote is over. 
+Check the amount of LLM that are currently actively used in votes:
+`Developer > chainstate > llm > select llmPoliticsLock `
+
+
+### Submit a referendum:   
 
