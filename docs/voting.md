@@ -51,29 +51,31 @@ Unpool your llm with :
 
 
 ## Set on-chain role  
-Once you have pooled LLM you can now go to `polkadot.js > Developer > extrinsics > identity > setIdentity`
-Make sure you set the Citizenfield to raw and put 1 as the input. 
+Once you have pooled LLM you can now go to `polkadot.js > Developer > extrinsics > identity > setIdentity`             
+Make sure you set the Citizenfield to raw and put 1 as the input.               
  
 Submit the transaction!
 
-#### Request judgement:  
-`polkadot.js > Developer > extrinsics > identity > requestJudgement `
-regIndex: 0
-maxFee: 500
+#### Request judgement:        
+`polkadot.js > Developer > extrinsics > identity > requestJudgement `          
+regIndex: 0                   
+maxFee: 500              
 
-Note: if your testing this in a local --dev enviroment, you need to use the sudo ac(Alice) to set a registra:
-Sudo > identity > addRegistrar  
+Note: if your testing this in a local --dev enviroment, you need to use the sudo ac(Alice) to set a registra:              
+Sudo > identity > addRegistrar   
 
-Now you need to either wait for someone to give you a judgement of Knowngood or do it yourself:    
+Now you need to either wait for someone to give you a judgement of Knowngood or do it yourself:     
 
 ![Judgement](judgement.png "Provide judgement")
 
 
-Now when you have become an on-chain citizen you can interact with the politics system with your pooled llm.
-When you vote your pooled LLM will become locked until the vote is over. 
-Check the amount of LLM that are currently actively used in votes:
+Now when you have become an on-chain citizen you can interact with the politics system with your pooled llm.            
+
+When you vote your pooled LLM will become locked until the vote is over.           
+Check the amount of LLM that are currently actively used in votes:            
 `Developer > chainstate > llm > select llmPoliticsLock `
 
 
-### Submit a referendum:   
+Head over to the Democracy tab and start interacting with your pooled llm.
+
 
