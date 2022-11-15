@@ -1,3 +1,8 @@
+# How to run a validator
+
+Note:   
+*DO NOT* expose your validators rpc port publicly on the internet. Treat validators with more care than full nodes      
+You *do not* need to a run a validator to earn LLD staking rewards. As a user you can simply become a nominator and stake your coins without needing to run a validator.   
 
 compile the node with cargo:
 
@@ -40,6 +45,9 @@ $ subkey inspect "power popular buffalo predict renew gasp stay steak blanket op
 
 
 # Sync the node
+```
+./target/release/substrate --chain customSpecRaw.json --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWRdDm7tDTR8uL9CQxvnvXrUBPLJfrKuHJaCLZfWz9WzeY --base-path /tmp/hayek --unsafe-pruning --pruning=1000 
+```
 
 ## Submit keys
 
@@ -93,3 +101,4 @@ curl http://localhost:9933  -H "Content-Type:application/json;charset=utf-8" -d 
 ## check that keys have been added
 
 restart node with validator flag
+--validator
