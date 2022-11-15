@@ -16,7 +16,8 @@ install subkey:
 cargo install subkey
 ```
 
-generate keys:
+## Generate keys:
+
 ```
 $ subkey generate
 Secret phrase:       power popular buffalo predict renew gasp stay steak blanket opinion current stove
@@ -28,6 +29,15 @@ Secret phrase:       power popular buffalo predict renew gasp stay steak blanket
 
 
 ```
+
+You will need the following keys:  
+-  stash keys(use in polkadot.js) (ed25519 or sr25519)      
+-  controller(use in polkadot.js) keys (ed25519 or sr25519)   
+-  Babe keys(submit to validator) (sr25519)   
+-  Grandpa keys(submit to validator)  (ed25519)   
+-  ImOnline keys(submit to validator)  (sr25519)   
+-  AuthorityDiscovery keys(submit to validator)  (sr25519)    
+
 
 Grab your seed phrase and use the seedphrase to generate the next keys:
 
