@@ -44,7 +44,8 @@ $ subkey inspect "power popular buffalo predict renew gasp stay steak blanket op
 
 
 
-# Sync the node
+# Sync the node   
+Sync your node without the validator flag to the latest finalized block:   
 ```
 ./target/release/substrate --chain customSpecRaw.json --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWRdDm7tDTR8uL9CQxvnvXrUBPLJfrKuHJaCLZfWz9WzeY --base-path /tmp/hayek --unsafe-pruning --pruning=1000 
 ```
@@ -98,7 +99,19 @@ curl http://localhost:9933  -H "Content-Type:application/json;charset=utf-8" -d 
 
 ```
 
-## check that keys have been added
+## check that keys have been added  
+check the directory you specified with `--base-path`:  
+```
+$ ls /tmp/hayek/chains/hayek/keystore/
+```
 
-restart node with validator flag
---validator
+
+
+
+
+### restart node with validator flag:   
+```
+./target/release/substrate --chain customSpecRaw.json --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWRdDm7tDTR8uL9CQxvnvXrUBPLJfrKuHJaCLZfWz9WzeY --base-path /tmp/hayek --unsafe-pruning --pruning=1000 --validator
+```
+
+
