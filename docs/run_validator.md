@@ -124,7 +124,15 @@ $ ls /tmp/hayek/chains/hayek/keystore/
 ./target/release/substrate --chain customSpecRaw.json --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWRdDm7tDTR8uL9CQxvnvXrUBPLJfrKuHJaCLZfWz9WzeY --base-path /tmp/hayek --unsafe-pruning --pruning=1000 --validator
 ```
 
+## Rotate keys
+```
+curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_rotateKeys", "id":1 }' 127.0.0.1:9933
+```
 
+
+## Submit validator in polkadot 
+
+Head over to polkadot.js and Go to Network > Staking > Accounts > `+ Validator` set your stash and controller and paste in the result from the previous step on the next page. click "Click "Bond & Validate" and your done! Your validator should soon come online
 
 
 ## Final Step:  
