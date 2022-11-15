@@ -10,3 +10,11 @@ install subkey:
 ```
 cargo install subkey
 ```
+
+
+# Sync the node
+
+## Submit keys
+
+## check that keys have been added
+
