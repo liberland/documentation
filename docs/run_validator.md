@@ -43,6 +43,53 @@ $ subkey inspect "power popular buffalo predict renew gasp stay steak blanket op
 
 ## Submit keys
 
+```
+curl http://localhost:9933  -H "Content-Type:application/json;charset=utf-8" -d '{
+    "jsonrpc":"2.0",
+    "id":1,
+    "method":"author_insertKey",
+    "params": [
+        "babe",
+        "SEEDGOESHERE//babe",
+        "PUBKEY"
+    ]
+}'
+
+curl http://localhost:9933  -H "Content-Type:application/json;charset=utf-8" -d '{
+    "jsonrpc":"2.0",
+    "id":1,
+    "method":"author_insertKey",
+    "params": [
+        "gran",
+        "SEEDGOESHERE//grandpa",
+        "PUBKEY"
+    ]
+}'
+
+curl http://localhost:9933  -H "Content-Type:application/json;charset=utf-8" -d '{
+    "jsonrpc":"2.0",
+    "id":1,
+    "method":"author_insertKey",
+    "params": [
+        "imol",
+        "SEEDGOESHERE//im_online",
+        "5Ehp3to58kyKEpZd8PyXGWr2TpXVCS1b31W5TkiLKvxr4CJn"
+    ]
+}'
+
+curl http://localhost:9933  -H "Content-Type:application/json;charset=utf-8" -d '{
+    "jsonrpc":"2.0",
+    "id":1,
+    "method":"author_insertKey",
+    "params": [
+        "audi",
+        "SEEDGOESHERE//authority_discovery",
+        "PUBKEY"
+    ]
+}'
+
+```
+
 ## check that keys have been added
 
 restart node with validator flag
