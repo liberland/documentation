@@ -115,3 +115,8 @@ $ ls /tmp/hayek/chains/hayek/keystore/
 ```
 
 
+
+
+## Final Step:  
+Once your validator is up and running and you have a solid track record of no downtime.  
+You can ask other LLD holders to nominate your validator node.   
