@@ -18,3 +18,4 @@ cargo install subkey
 
 ## check that keys have been added
 
+restart node with validator flag
