@@ -43,4 +43,9 @@ Head over to [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fl2.lais
 
 Use the Multisig account as the source and select the reciever(the reciever can be any account on the chain)
 
+Press submit transaction and copy the "multisig call data" and the "call hash" before you press "Sign and submit"
+
+
  
+Once the transaction is approved, you can head over to polkadot.js > developer > chain state > llm > LLMbalance and check the balance of the reciever
+
