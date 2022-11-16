@@ -10,6 +10,7 @@ Upload documentation in this folder in Markdown(.md) format
 [run_validator.md](run_validator.md)    
 
 ## Test Senate:  
+[senate.md](senate.md)
 
 ## Identity Documentation:  
 https://github.com/liberland/liberland_substrate/blob/main/docs/liberland/identity.md  
