@@ -38,7 +38,6 @@ Head over to [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fl2.lais
 
 ![treasury_trans_llm.png](treasury_trans_llm.png)    
 
-Select
-
+Use the Multisig account as the source and select the reciever(the reciever can be any account on the chain)
 
  
