@@ -7,6 +7,12 @@ You *do not* need to a run a validator to earn LLD staking rewards. As a user yo
 
 *THIS IS FOR HAZLITT CHAIN*
 
+
+Prapare your machine to be able to run Rust, Substrate and Cargo
+``` 
+https://docs.substrate.io/install/
+```
+
 compile the node with cargo:
 
 ```
@@ -16,11 +22,11 @@ git clone https://github.com/liberland/liberland_substrate && cd liberland_subst
 
 install subkey:
 ```
-cargo install subkey
+cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.2 --locked
 ```
 
 ## Generate keys:
-
+Subkey generate command will return a secret mnemonic phrase and other keys similar to:
 ```
 $ subkey generate
 Secret phrase:       power popular buffalo predict renew gasp stay steak blanket opinion current stove
@@ -42,15 +48,15 @@ You will need the following keys:
 -  AuthorityDiscovery keys(submit to validator)  (sr25519)    
 
 
-Grab your seed phrase and use the seedphrase to generate the next keys:
+Grab your mnemonic seed phrase and use subkey inspect to generate the next keys, and save them in a safe place:
 
 ## Generate grandpa, babe, audi and imol keys for your validator   
 
 ```
-$ subkey inspect "power popular buffalo predict renew gasp stay steak blanket opinion current stove//grandpa" --scheme ed25519
-$ subkey inspect "power popular buffalo predict renew gasp stay steak blanket opinion current stove//babe" --scheme sr25519
-$ subkey inspect "power popular buffalo predict renew gasp stay steak blanket opinion current stove//im_online" --scheme sr25519
-$ subkey inspect "power popular buffalo predict renew gasp stay steak blanket opinion current stove//authority_discovery" --scheme sr25519
+$ subkey inspect "<SECRET_PHRASE>//grandpa" --scheme ed25519
+$ subkey inspect "<SECRET_PHRASE>//babe" --scheme sr25519
+$ subkey inspect "<SECRET_PHRASE>//im_online" --scheme sr25519
+$ subkey inspect "<SECRET_PHRASE>//authority_discovery" --scheme sr25519
 
 ```
 
@@ -115,7 +121,7 @@ curl http://localhost:9933  -H "Content-Type:application/json;charset=utf-8" -d 
 ## check that keys have been added  
 check the directory you specified with `--base-path`:  
 ```
-$ ls /tmp/hayek/chains/hazlitt/keystore/
+$ ls /tmp/hazlitt/chains/hazlitt/keystore/
 ```
 
 
@@ -124,10 +130,12 @@ $ ls /tmp/hayek/chains/hazlitt/keystore/
 
 ### restart node with validator flag:   
 ```
-./target/release/substrate --chain specs/hazlittRaw.json  --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWPMnWGGYBzYyEc9Tsw9RDws4NrDpbN4LrHZ19Kk6yhwTo --base-path /tmp/hayek --unsafe-pruning --pruning=1000 --validator
+./target/release/substrate --chain specs/hazlittRaw.json  --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWPMnWGGYBzYyEc9Tsw9RDws4NrDpbN4LrHZ19Kk6yhwTo --base-path /tmp/hazlitt --unsafe-pruning --pruning=1000 --validator
 ```
 
 ## Rotate keys
+
+Run the following command and save the 'result' parameter it returns
 ```
 curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_rotateKeys", "id":1 }' 127.0.0.1:9933
 ```
