@@ -45,7 +45,9 @@ Use the Multisig account as the source and select the reciever(the reciever can 
 
 Press submit transaction and copy the "multisig call data" and the "call hash" before you press "Sign and submit"
 
-
+Once your transaction has been created from the senate wallet, you can see the transactions as waiting in the "Accounts" tab.
+![senate_waiting.png](senate_waiting.png)    
+ 
  
 Once the transaction is approved, you can head over to polkadot.js > developer > chain state > llm > LLMbalance and check the balance of the reciever
 
