@@ -1,9 +1,12 @@
 # Senate guide  
 
 ## Pre requirements:  
-Read [LLM documentation](https://github.com/liberland/liberland_substrate/blob/main/frame/llm/Readme.md)   
+Read [LLM documentation](https://github.com/liberland/liberland_substrate/blob/main/frame/llm/Readme.md)     
+Read [How to create a multisignature wallet on liberland chain](https://docs.google.com/document/d/17CM3cmndbaIB5wuwd_WQc0jjPXR1qGLXnIphxRCZ8kc/edit?usp=sharing)    
+
 
 Senate is the only entity that can send LLM from the treasury's account.
+
 
 ## Multisig:  
 The senate consist of the 2/4 Multisig: "5DDRSE9Qh2aw8X1P6hEv2AZx61Wa3W7HTc3nk7bLjq93z1ga"    
@@ -26,11 +29,25 @@ V: 5DwWxf1NzMpp4D3jv1KY176DwYRRkKDguprmMw4BjieCX2ZK
 dev: 5CCi1rPi7cphC6iE9mWkYvbLf57b9N233nFG8hM5zjvYZpLi
 ```
 
+*NOTE: IF YOUR ADDRESS IS NOT LISTED HERE OR NOT PART OF THE SENATE MULTISIG, YOU CAN NOT USE THIS FUNCTIONALITY*
+
 Check Multisig manually by going to polkadot.js > accounts > `+ Multisig` and adding the addresses above.  
 
 2 out of 4 signers must approve each transaction.  
 
 
-## Make a treasury transfer with senate
+## Make a treasury transfer with senate   
+Head over to [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fl2.laissez-faire.trade#/explorer) > Developer > extrinsics > `LLM` > `treasuryLLMtransfer`
 
-`LLM` > `treasury_llm_transfer`
+![treasury_trans_llm.png](treasury_trans_llm.png)    
+
+Use the Multisig account as the source and select the reciever(the reciever can be any account on the chain)
+
+Press submit transaction and copy the "multisig call data" and the "call hash" before you press "Sign and submit"
+
+Once your transaction has been created from the senate wallet, you can see the transactions as waiting in the "Accounts" tab.
+![senate_waiting.png](senate_waiting.png)    
+ 
+ 
+Once the transaction is approved, you can head over to polkadot.js > developer > chain state > llm > LLMbalance and check the balance of the reciever
+
