@@ -18,3 +18,8 @@ https://github.com/liberland/liberland_substrate/blob/main/docs/liberland/identi
 
 ## LLM Documentation:  
 https://github.com/liberland/liberland_substrate/blob/main/frame/llm/Readme.md   
+
+# Miscellaneous:
+
+
+## Upgrade liberland chain  
