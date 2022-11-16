@@ -1,9 +1,12 @@
 # Senate guide  
 
 ## Pre requirements:  
-Read [LLM documentation](https://github.com/liberland/liberland_substrate/blob/main/frame/llm/Readme.md)   
+Read [LLM documentation](https://github.com/liberland/liberland_substrate/blob/main/frame/llm/Readme.md)     
+Read [How to create a multisignature wallet on liberland chain](https://docs.google.com/document/d/17CM3cmndbaIB5wuwd_WQc0jjPXR1qGLXnIphxRCZ8kc/edit?usp=sharing)    
+
 
 Senate is the only entity that can send LLM from the treasury's account.
+
 
 ## Multisig:  
 The senate consist of the 2/4 Multisig: "5DDRSE9Qh2aw8X1P6hEv2AZx61Wa3W7HTc3nk7bLjq93z1ga"    
