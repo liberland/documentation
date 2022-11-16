@@ -4,6 +4,9 @@ Note:
 *DO NOT* expose your validators rpc port publicly on the internet. Treat validators with more care than full nodes      
 You *do not* need to a run a validator to earn LLD staking rewards. As a user you can simply become a nominator and stake your coins without needing to run a validator.   
 
+
+*THIS IS FOR HAZLITT CHAIN*
+
 compile the node with cargo:
 
 ```
@@ -57,7 +60,7 @@ $ subkey inspect "power popular buffalo predict renew gasp stay steak blanket op
 # Sync the node   
 Sync your node without the validator flag to the latest finalized block:   
 ```
-./target/release/substrate --chain customSpecRaw.json --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWRdDm7tDTR8uL9CQxvnvXrUBPLJfrKuHJaCLZfWz9WzeY --base-path /tmp/hayek --unsafe-pruning --pruning=1000 
+./target/release/substrate --chain specs/hazlittRaw.json  --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWPMnWGGYBzYyEc9Tsw9RDws4NrDpbN4LrHZ19Kk6yhwTo --base-path /tmp/hazlitt --unsafe-pruning --pruning=1000 
 ```
 
 ## Submit keys
@@ -112,7 +115,7 @@ curl http://localhost:9933  -H "Content-Type:application/json;charset=utf-8" -d 
 ## check that keys have been added  
 check the directory you specified with `--base-path`:  
 ```
-$ ls /tmp/hayek/chains/hayek/keystore/
+$ ls /tmp/hayek/chains/hazlitt/keystore/
 ```
 
 
@@ -121,7 +124,7 @@ $ ls /tmp/hayek/chains/hayek/keystore/
 
 ### restart node with validator flag:   
 ```
-./target/release/substrate --chain customSpecRaw.json --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWRdDm7tDTR8uL9CQxvnvXrUBPLJfrKuHJaCLZfWz9WzeY --base-path /tmp/hayek --unsafe-pruning --pruning=1000 --validator
+./target/release/substrate --chain specs/hazlittRaw.json  --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWPMnWGGYBzYyEc9Tsw9RDws4NrDpbN4LrHZ19Kk6yhwTo --base-path /tmp/hayek --unsafe-pruning --pruning=1000 --validator
 ```
 
 ## Rotate keys
