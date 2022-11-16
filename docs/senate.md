@@ -26,6 +26,8 @@ V: 5DwWxf1NzMpp4D3jv1KY176DwYRRkKDguprmMw4BjieCX2ZK
 dev: 5CCi1rPi7cphC6iE9mWkYvbLf57b9N233nFG8hM5zjvYZpLi
 ```
 
+*NOTE: IF YOUR ADDRESS IS NOT LISTED HERE OR NOT PART OF THE SENATE MULTISIG, YOU CAN NOT USE THIS FUNCTIONALITY*
+
 Check Multisig manually by going to polkadot.js > accounts > `+ Multisig` and adding the addresses above.  
 
 2 out of 4 signers must approve each transaction.  
@@ -33,3 +35,10 @@ Check Multisig manually by going to polkadot.js > accounts > `+ Multisig` and ad
 
 ## Make a treasury transfer with senate   
 Head over to [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fl2.laissez-faire.trade#/explorer) > Developer > extrinsics > `LLM` > `treasury_llm_transfer`
+
+![treasury_trans_llm.png](treasury_trans_llm.png)    
+
+Select
+
+
+ 
