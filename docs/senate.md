@@ -44,10 +44,17 @@ Head over to [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fl2.lais
 Use the Multisig account as the source and select the reciever(the reciever can be any account on the chain)
 
 Press submit transaction and copy the "multisig call data" and the "call hash" before you press "Sign and submit"
+ Copy the call multisig call data and end it to the other signers
+
 
 Once your transaction has been created from the senate wallet, you can see the transactions as waiting in the "Accounts" tab.
 ![senate_waiting.png](senate_waiting.png)    
  
+ 
+Verify the call data:
+Head over to Developer > extrensic > decode and check each call data:    
+![check_call_data.png](check_call_data.png)   
+
  
 Once the transaction is approved, you can head over to polkadot.js > developer > chain state > llm > LLMbalance and check the balance of the reciever
 
