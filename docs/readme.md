@@ -4,3 +4,10 @@ Upload documentation in this folder in Markdown(.md) format
 
 ## Voting with on-chain assets
 [voting.md](voting.md)
+
+
+## Run a validator on Hazlitt chain   
+[run_validator.md](run_validator.md)    
+
+## Test Senate  
+
