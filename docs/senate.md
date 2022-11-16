@@ -31,6 +31,5 @@ Check Multisig manually by going to polkadot.js > accounts > `+ Multisig` and ad
 2 out of 4 signers must approve each transaction.  
 
 
-## Make a treasury transfer with senate
-
-`LLM` > `treasury_llm_transfer`
+## Make a treasury transfer with senate   
+Head over to [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fl2.laissez-faire.trade#/explorer) > Developer > extrinsics > `LLM` > `treasury_llm_transfer`
