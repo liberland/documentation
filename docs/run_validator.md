@@ -66,7 +66,7 @@ $ subkey inspect "<SECRET_PHRASE>//authority_discovery" --scheme sr25519
 # Sync the node   
 Sync your node without the validator flag to the latest finalized block:   
 ```
-./target/release/substrate --chain specs/hazlittRaw.json  --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWMjfFtoUExRpmKYTmUBmNj1N1pX8YLaGtKSEYpaeSvw3X --base-path /tmp/hazlitt --unsafe-pruning --pruning=1000 
+./target/release/substrate --chain specs/latest_hazlitt_raw  --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWGUgq3ETzFgWYQF4hyUzmzpwy4XkGnyCVcxLoymy3oWoK--base-path /tmp/hazlitt --unsafe-pruning --pruning=1000 
 ```
 
 ## Submit keys
@@ -130,7 +130,7 @@ $ ls /tmp/hazlitt/chains/hazlitt/keystore/
 
 ### restart node with validator flag:   
 ```
-./target/release/substrate --chain specs/hazlittRaw.json  --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWPMnWGGYBzYyEc9Tsw9RDws4NrDpbN4LrHZ19Kk6yhwTo --base-path /tmp/hazlitt --unsafe-pruning --pruning=1000 --validator
+./target/release/substrate --chain specs/hazlittRaw.json  --bootnodes /ip4/162.55.230.227/tcp/30333/p2p/12D3KooWGUgq3ETzFgWYQF4hyUzmzpwy4XkGnyCVcxLoymy3oWoK --base-path /tmp/hazlitt --unsafe-pruning --pruning=1000 --validator
 ```
 
 ## Rotate keys
