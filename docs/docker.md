@@ -9,6 +9,10 @@
 $ docker pull laissezfaire/liberland-node:0.3.2
 ```
 
+## Select the chainspec
+Select the chainspec for the chain you wish to connect to from `liberland_substrate/specs/`   
+
+
 ## Check that the image is downloaded
 ```
 $ docker images -a
