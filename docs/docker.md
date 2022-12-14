@@ -17,8 +17,9 @@ $ docker images -a
 ## Run node    
 + Forward ports 9933 and 9944 to local socket(-p)   
 + "-d", detach the docker image and run it as a daemon  
++ "-e", set the enviromental variables for the validator(https://github.com/liberland/liberland.github.io/blob/main/docs/run_validator.md#restart-node-with-validator-flag)     
 ```
-$ docker run -p 9933:9933 -p 9944:9944 -d -v /home/user/liberland/:/data laissezfaire/liberland-node:0.3.2 liberland_node
+$ docker run -p 9933:9933 -p 9944:9944 -d -v /home/user/liberland/:/data laissezfaire/liberland-node:0.3.2 liberland_node -e "--chain mychainraw" -e 
 ```
 
 #### Check that node is running:   
