@@ -26,10 +26,9 @@ $ docker run -p 9933:9933 -p 9944:9944 -d -v /home/user/liberland/:/data laissez
 $ docker ps
 ```
 
-## Connect to your node with polkadot.js   
-```
-
-```
+## Connect to your node with polkadot.js    
+Head over to: https://polkadot.js.org/apps/#/explorer         
+Select local node on the right side        
 
 
 ### Link to node docker image:    
