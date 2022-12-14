@@ -18,8 +18,10 @@ $ docker images -a
 + Forward ports 9933 and 9944 to local socket(-p)   
 + "-d", detach the docker image and run it as a daemon  
 + "-e", set the enviromental variables for the node(https://github.com/liberland/liberland.github.io/blob/main/docs/run_validator.md#restart-node-with-validator-flag)     
-```
-$ docker run -p 9933:9933 -p 9944:9944 -d -v /home/user/liberland/:/data laissezfaire/liberland-node:0.3.2 liberland_node -e "--chain starlight" -e "--bootnodes /ip4/162.55.230.228/tcp/1666/p2p/12D3KooWFztTwRSs6hhRNPcwxer5ueQDJYrSeJknPwZu2diVzbTm"
+```bash
+$ docker run -p 9933:9933 -p 9944:9944 -d  \
+-v /home/user/liberland/:/data laissezfaire/liberland-node:0.3.2 liberland_node  \  
+-e "--chain starlight" -e "--bootnodes /ip4/162.55.230.228/tcp/1666/p2p/12D3KooWFztTwRSs6hhRNPcwxer5ueQDJYrSeJknPwZu2diVzbTm"
 ```
 
 #### Check that node is running:   
