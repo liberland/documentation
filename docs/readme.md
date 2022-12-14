@@ -16,6 +16,10 @@ Upload documentation in this folder in Markdown(.md) format
 https://github.com/liberland/liberland_substrate/blob/main/docs/liberland/identity.md  
 
 
+## Run with Docker
+[docker.md](docker.md)   
+
+
 ## LLM Documentation:  
 https://github.com/liberland/liberland_substrate/blob/main/frame/llm/Readme.md   
 
