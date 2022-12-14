@@ -6,6 +6,10 @@ Upload documentation in this folder in Markdown(.md) format
 [voting.md](voting.md)
 
 
+## Run a validator on StarLight Chain   
+[run_a_validator_on_starlight.md](run_a_validator_on_starlight.md)    
+
+
 ## Run a validator on Hazlitt chain   
 [run_validator.md](run_validator.md)    
 
