@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"trait":[["CitizenshipChecker","trait for more abstract methods that take data from multiple sources"],["LLM","trait for LLM methods that only interact with LLM pallet"]]};

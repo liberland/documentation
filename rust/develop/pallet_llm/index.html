@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Liberland Merit(LLM) Pallet"><meta name="keywords" content="rust, rustlang, rust-lang, pallet_llm"><title>pallet_llm - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../static.files/rustdoc-71d02aebf3a9cedb.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../static.files/light-c11f492748536797.css"><link rel="stylesheet" disabled href="../static.files/dark-a78f946771c40031.css"><link rel="stylesheet" disabled href="../static.files/ayu-70b683d68cb31790.css"><script id="default-settings" ></script><script src="../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../crates.js"></script><script defer src="../static.files/main-0dede64717b247ca.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-201a7e04dc4c6fce.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../pallet_llm/index.html"><div class="logo-container"><img class="rust-logo" src="../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></div></a><h2></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../pallet_llm/index.html"><div class="logo-container"><img class="rust-logo" src="../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></div></a><h2 class="location"><a href="#">Crate pallet_llm</a></h2><div class="sidebar-elems"><ul class="block"><li class="version">Version 0.1.0</li><li><a id="all-types" href="all.html">All Items</a></li></ul><section><ul class="block"><li><a href="#modules">Modules</a></li></ul></section></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1 class="fqn">Crate <a class="mod" href="#">pallet_llm</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="srclink" href="../src/pallet_llm/lib.rs.html#1-696">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><details class="rustdoc-toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="liberland-meritllm-pallet"><a href="#liberland-meritllm-pallet">Liberland Merit(LLM) Pallet</a></h2><h3 id="overview"><a href="#overview">Overview</a></h3>
+<p>Liberland Merit is a Liberland currency that gives political power to citizens.</p>
+<p>The LLM pallet handles:</p>
+<ul>
+<li>creating LLM asset in <code>pallet-assets</code> on genesis</li>
+<li>LLM inflation to treasury</li>
+<li>locking, a.k.a. politipooling the LLM for use in politics</li>
+<li>veryfing citizenship status</li>
+</ul>
+<h3 id="llm-lifecycle"><a href="#llm-lifecycle">LLM lifecycle</a></h3>
+<p>On Genesis (see <code>fn create_llm</code>):</p>
+<ul>
+<li>LLM is created in <code>pallet-assets</code></li>
+<li>configured <code>TotalSupply</code> amount of LLM is created and transferred to <strong>Vault</strong></li>
+<li>configured <code>PreMintedAmount</code> is transferred from <strong>Vault</strong> to <strong>Treasury</strong></li>
+</ul>
+<p>On yearly basis (see <code>fn try_mint</code>):</p>
+<ul>
+<li>90% of <strong>Vault</strong> balance is transferred to <strong>Treasury</strong></li>
+</ul>
+<p>Accounts are free to locks in politics, a.k.a. politipool any amount of LLM at any time.</p>
+<p>Accounts may unlock 10% of locked LLM once every <code>Withdrawlock</code> duration (see <a href="#genesis-config">Genesis
+Config</a>), but it will suspend their politics rights for <code>Electionlock</code>
+duration.</p>
+<p>Accounts may freely transfer their not-locked LLM to other accounts.</p>
+<h4 id="special-accounts"><a href="#special-accounts">Special accounts:</a></h4>
+<ul>
+<li>
+<p><strong>Treasury</strong>:</p>
+<ul>
+<li>gets preminted and inflation LLM</li>
+<li>derived from PalletID <code>py/trsry</code>: <code>5EYCAe5ijiYfyeZ2JJCGq56LmPyNRAKzpG4QkoQkkQNB5e6Z</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Vault</strong>:</p>
+<ul>
+<li>gets initial supply of LLM on genesis</li>
+<li>releases 90% of it’s balance to <strong>Trasury</strong> on inflation event (yearly)</li>
+<li>derived from PalletID <code>llm/safe</code>: <code>5EYCAe5hvejUE1BUTDSnxDfCqVkADRicSKqbcJrduV1KCDmk</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Politipool</strong>,</p>
+<ul>
+<li>gets LLM locked in politics by other accounts (<code>politics_lock</code>)</li>
+<li>releases locked LLM back on <code>politics_unlock</code></li>
+<li>derived from PalletID <code>politilock</code>: <code>5EYCAe5ijGqt3WEM9aKUBdth51NEBNz9P84NaUMWZazzWt7c</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="internal-storage"><a href="#internal-storage">Internal Storage:</a></h3>
+<ul>
+<li><code>NextMint</code>: block number for next LLM inflation mint (transfer of 90% from <strong>Vault</strong> to
+<strong>Treasury</strong>)</li>
+<li><code>LLMPolitics</code>: amount of LLM each account has allocated into politics</li>
+<li><code>Withdrawlock</code>: block number until which account can’t do another <code>politics_unlock</code></li>
+<li><code>Electionlock</code>: block number until which account can’t participate in politics directly</li>
+</ul>
+<h3 id="runtime-config"><a href="#runtime-config">Runtime config</a></h3>
+<ul>
+<li><code>RuntimeEvent</code>: Event type to use.</li>
+<li><code>AssetId</code>: Type of AssetId.</li>
+<li><code>TotalSupply</code>: Total amount of LLM to be created on genesis. That’s all LLM that will ever
+exit. It will be stored in <strong>Vault</strong>.</li>
+<li><code>PreMintedAmount</code>: Amount of LLM that should be minted (a.k.a. transferred from <strong>Vault</strong> to
+<strong>Treasury</strong>) on genesis.</li>
+</ul>
+<h3 id="genesis-config"><a href="#genesis-config">Genesis Config</a></h3>
+<ul>
+<li><code>unpooling_withdrawlock_duration</code>: duration, in seconds, for which additional unlocks should
+be locked after <code>politics_unlock</code></li>
+<li><code>unpooling_electionlock_duration</code>: duration, in seconds, for which politics rights should be
+suspended after <code>politics_unlock</code></li>
+</ul>
+<h3 id="interface"><a href="#interface">Interface</a></h3><h4 id="dispatchable-functions"><a href="#dispatchable-functions">Dispatchable Functions</a></h4><h5 id="public"><a href="#public">Public</a></h5>
+<p>These calls can be made from any <em>Signed</em> origin.</p>
+<ul>
+<li><code>fake_send</code>: Mint LLM to account. Development only, to be removed/restricted.</li>
+<li><code>send_llm</code>: Transfer LLM. Wrapper over <code>pallet-assets</code>’ <code>transfer</code>.</li>
+<li><code>politics_lock</code>: Lock LLM into politics pool, a.k.a. politipool.</li>
+<li><code>politics_unlock</code>: Unlock 10% of locked LLM. Can’t be called again for a WithdrawalLock
+period. Affects political rights for an ElectionLock period.</li>
+<li><code>createllm</code>: Creates LLM asset in <code>pallet-assets</code>.</li>
+<li><code>approve_transfer</code>: As an assembly member you can approve a transfer of LLM. Not implemented.</li>
+</ul>
+<h5 id="restricted"><a href="#restricted">Restricted</a></h5>
+<ul>
+<li><code>treasury_llm_transfer</code>: Transfer LLM from treasury to specified account. Can only be called
+by selected accounts and Senate.</li>
+</ul>
+<h4 id="public-functions"><a href="#public-functions">Public functions</a></h4>
+<ul>
+<li><code>llm_id</code>: Asset ID of the LLM asset for <code>pallet-assets</code></li>
+<li><code>get_llm_vault_account</code>: AccountId of <strong>Vault</strong> account. <strong>Vault</strong> account stores all LLM
+created initially on genesis and releases it to treasury as inflation on regular basis.</li>
+<li><code>get_llm_treasury_account</code>: AccountId of <strong>Treasury</strong> account. *<em>Treasury</em> accounts receives
+preminted amount of LLM on genesis and part of LLM from <strong>Vault</strong> as inflation on regular
+basis.</li>
+<li><code>get_llm_politipool_account</code>: AccountId of <strong>Politipool</strong> account. <strong>Politipool</strong> account
+stores LLM locked in politics by all other accounts.</li>
+</ul>
+<h4 id="llm-trait"><a href="#llm-trait">LLM trait</a></h4>
+<p>LLM pallet implements LLM trait with following functions available for other pallets:</p>
+<ul>
+<li><code>check_pooled_llm</code>: Checks if given account has any LLM locked in politics.</li>
+<li><code>is_election_unlocked</code>: Checks if given account has rights to participate in politics
+unlocked. They may be locked after <code>politics_unlock</code>. This does NOT check if account is a
+valid citizen - use <code>CitizenshipChecker</code> trait for that.</li>
+<li><code>get_politi_pooled_amount</code>: Get total amount of locked LLM across all accounts.</li>
+<li><code>get_llm_politics</code>: Get amount of locked LLM for given account.</li>
+</ul>
+<h4 id="citizenshipchecker-trait"><a href="#citizenshipchecker-trait">CitizenshipChecker trait</a></h4>
+<p>LLM pallet implements CitizenshipChecker trait with following functions available for other
+pallets:</p>
+<ul>
+<li><code>ensure_democracy_allowed</code>: Checks if given account can participate in democracy actions. It
+verifies that it’s a valid citizen, doesn’t have election rights locked and has some LLM
+locked in politics.</li>
+<li><code>ensure_elections_allowed</code>: Checks if given account can participate in election actions. It
+verifies that it’s a valid citizen, doesn’t have election rights locked.</li>
+</ul>
+<p>License: MIT</p>
+</div></details><h2 id="reexports" class="small-section-header"><a href="#reexports">Re-exports</a></h2><div class="item-table"><div class="item-row"><div class="item-left import-item"><code>pub use <a class="mod" href="pallet/index.html" title="mod pallet_llm::pallet">pallet</a>::*;</code></div></div></div><h2 id="modules" class="small-section-header"><a href="#modules">Modules</a></h2><div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="mod" href="pallet/index.html" title="pallet_llm::pallet mod">pallet</a></div><div class="item-right docblock-short">The module that hosts all the
+<a href="https://docs.substrate.io/main-docs/build/events-errors/">FRAME</a>
+types needed to add this pallet to a
+runtime.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="traits/index.html" title="pallet_llm::traits mod">traits</a></div></div></div></section></div></main><div id="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="pallet_llm" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (e75aab045 2022-11-09)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-3a0b9947ba1bd99a.js" data-settings-css="settings-a66f7524084a489a.css" ></div></body></html>
