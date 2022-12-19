@@ -1,0 +1,15 @@
+[book]
+authors = ["flipchan", "Kacper Żuk"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Liberland Blockchain Documentation"
+
+[rust]
+edition = "2021"
+
+[output.html]
+git-repository-url = "https://github.com/liberland/liberland.github.io"
+edit-url-template = "https://github.com/liberland/liberland.github.io/edit/main/{path}"
+site-url = "/book/"
+cname = "liberland.github.io"

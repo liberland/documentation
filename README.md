@@ -1,19 +1,22 @@
-# Documentation
-Documentation for Liberland's Blockchain
+# Liberland Blockchain Documentation
 
-All documentation can be find in the *docs/* folder
+To see documentation, visit [https://liberland.github.io/book/](https://liberland.github.io/book/)
 
+## Working with documentation
 
-### Add documetation by submiting a pull request to this repository
+Install `mdbook`:
+```
+cargo install mdbook
+```
 
+Open docs locally (with auto-rebuild on changes):
+```
+mdbook serve --open
+```
 
-### Useful links:  
-https://github.com/liberland/liberland_substrate/  
-LLM documentation: https://github.com/liberland/liberland_substrate/blob/main/frame/llm/Readme.md  
+Build docs for publishing (outputs to `book/` dir):
+```
+mdbook build
+```
 
-## Access using polkadot.js   
-wss://L2.laissez-faire.trade link:    
-https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fl2.laissez-faire.trade#/explorer
-
-ws://testnet.liberland.org:5337             
-https://polkadot.js.org/apps/?rpc=ws%3A%2F%2Ftestnet.liberland.org%3A5337#/explorer
+See [mdBook documentation](https://rust-lang.github.io/mdBook/guide/creating.html) for more information.

@@ -39,7 +39,7 @@ Check Multisig manually by going to polkadot.js > accounts > `+ Multisig` and ad
 ## Make a treasury transfer with senate   
 Head over to [Polkadot.js](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fl2.laissez-faire.trade#/explorer) > Developer > extrinsics > `LLM` > `treasuryLLMtransfer`
 
-![treasury_trans_llm.png](treasury_trans_llm.png)    
+![treasury_trans_llm.png](media/treasury_trans_llm.png)    
 
 Use the Multisig account as the source and select the reciever(the reciever can be any account on the chain)
 
@@ -48,12 +48,12 @@ Press submit transaction and copy the "multisig call data" and the "call hash" b
 
 
 Once your transaction has been created from the senate wallet, you can see the transactions as waiting in the "Accounts" tab.
-![senate_waiting.png](senate_waiting.png)    
+![senate_waiting.png](media/senate_waiting.png)    
  
  
 Verify the call data:
 Head over to Developer > extrensic > decode and check each call data:    
-![check_call_data.png](check_call_data.png)   
+![check_call_data.png](media/check_call_data.png)   
 
  
 Once the transaction is approved, you can head over to polkadot.js > developer > chain state > llm > LLMbalance and check the balance of the reciever
